@@ -116,4 +116,15 @@ class LinkedList {
             current.next = current.next.next;
         }
     }
+    remove(value) {
+        if (this.head.data === value) return this.removeAt(0);
+        let current = this.head;
+        while(current.next) {
+            if (current.next.data === value) {
+                return current.next = current.next.next;
+            } else {
+                current = current.next
+            }
+        }
+    }
 }
